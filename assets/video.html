@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="//cdn.bootcss.com/video.js/7.0.0-alpha.1/alt/video-js-cdn.css" rel="stylesheet">
+    <script src="//cdn.bootcss.com/video.js/7.0.0-alpha.1/video.min.js"></script>
+    <style>
+        .boy {
+            margin: 0px;
+
+        }
+
+    </style>
+</head>
+<body class="boy">
+<video id="video_player" style="width:100%" autoplay="autoplay" controls="controls">
+</video>
+
+<script>
+
+    let videoElement;
+    let mUrl = "";
+    window.addEventListener("load", function () {
+        videoElement = document.getElementById("video_player");
+        videoElement.src = url;
+    });
+
+    function play(url) {
+        mUrl = url;
+        if (videoElement != null) {
+            videoElement.src = url;
+        }
+        window.parent.postMessage("test", "targetOrigin");
+    }
+
+
+</script>
+
+</body>
+</html>
